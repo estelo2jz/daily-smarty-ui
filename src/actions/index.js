@@ -21,7 +21,7 @@ export function fetchRecentPosts() {
   }
 }
 
-export function fetchPostsWithQuery(query) {
+export function fetchPostsWithQuery(query, callback) {
   return function(dispatch) {
     axios.get(`https://api.dailysmarty.com/search?q=${query}`)
       .then(response => {
@@ -30,6 +30,7 @@ export function fetchPostsWithQuery(query) {
           type: SET_RESULTS_POSTS,
           payload: response.data.posts
         })
+        if(callback) { callback() }
       })
       .catch(error => {
         console.log('daily smarty error', error);

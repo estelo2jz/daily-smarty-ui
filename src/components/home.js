@@ -12,18 +12,17 @@ class Home extends Component {
   handleSearchBarSubmit(query) {
     // console.log('trying to handle submit query', query);
     // navigate to a new route
-    this.props.fetchPostsWithQuery(query);
-    this.props.history.push('/results');
+    this.props.fetchPostsWithQuery(query, () => {
+      this.props.history.push('/results');
+    });
   }
 
   render() {
     return (
-      <div>
-        <div>
-          <Logo />
-          <SearchBar onSubmit={(query) => this.handleSearchBarSubmit(query)} />
-          <RecentPosts />
-        </div>
+      <div className="home">
+        <Logo />
+        <SearchBar onSubmit={(query) => this.handleSearchBarSubmit(query)} />
+        <RecentPosts />
       </div>
     );
   }

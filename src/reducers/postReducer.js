@@ -2,7 +2,7 @@ import  {
   SET_RECENT_POSTS,
   SET_RESULTS_POSTS
 } from '../actions/types';
-import results from '../components/results';
+import Results from '../components/results';
 
 const INIT_STATE = {
   posts: [],

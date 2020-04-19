@@ -32,9 +32,8 @@ $color-blue-one: #0079FF;
 }
 
 @import './mixins';
-@import './searchBar.scss';
-@import './recentposts.scss';
-@import './post.scss';
-@import './home.scss';
-@import './results.scss';
-@import './logo.scss';
+@import './searchBar';
+@import './recentPosts';
+@import './post';
+@import './home';
+@import './results';
